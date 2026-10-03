@@ -1,0 +1,69 @@
+Binary Tree:
+-----------
+
+1. Binary Tree Inorder Traversal
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def inorder(self, root, ans):
+        if root==None:
+            return
+        
+        self.inorder(root.left, ans)
+        ans.append(root.val)
+        self.inorder(root.right, ans)
+
+    def inorderTraversal(self, root: TreeNode | None) -> list[int]:
+        ans = []
+        self.inorder(root, ans) 
+        return ans
+
+2. Binary Tree Postorder Traversal
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def postorder(self, root, ans):
+        if root==None:
+            return
+        
+        self.postorder(root.left, ans)
+        self.postorder(root.right, ans)
+        ans.append(root.val)
+
+    def postorderTraversal(self, root: TreeNode | None) -> list[int]:
+        ans = []
+        self.postorder(root, ans) 
+        return ans
+
+3. Binary Tree Preorder Traversal
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def preorder(self, root, ans):
+        if root==None:
+            return
+        
+        ans.append(root.val)
+        self.preorder(root.left, ans)
+        self.preorder(root.right, ans)
+
+    def preorderTraversal(self, root: TreeNode | None) -> list[int]:
+        ans = []
+        self.preorder(root, ans) 
+        return ans
