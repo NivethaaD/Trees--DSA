@@ -18,3 +18,57 @@ class Solution:
                 root = root.right
             
         return root
+
+2. Floor in BST
+
+'''
+Definition for Node
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+
+class Solution:
+    def findMaxFork(self, root, k):
+        #code here
+        maxi = -1
+        
+        while root!=None:
+            if root.data > k:
+                root = root.left
+            else:
+                if root.data > maxi:
+                    maxi = root.data
+                root = root.right
+            
+        return maxi
+            
+3. Ceil in BST
+
+'''
+Definition for Node
+class Node:
+    def __init__(self, val):
+        self.right = None
+        self.data = val
+        self.left = None 
+'''
+        
+class Solution:
+    def findCeil(self,root, x):
+        # code here
+        mini = float('inf')
+
+        while root!=None:
+            if root.data >= x:
+                if root.data < mini:
+                    mini = root.data
+                root = root.left
+            else:
+                root = root.right
+
+        if mini != float('inf'):
+            return mini
+        return -1
