@@ -92,3 +92,4 @@ class Solution:
             root = root.left
         
         return root.data
+
