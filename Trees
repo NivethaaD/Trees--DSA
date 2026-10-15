@@ -67,3 +67,4 @@ class Solution:
         ans = []
         self.preorder(root, ans) 
         return ans
+
